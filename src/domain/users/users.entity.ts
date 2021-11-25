@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
+import { OwnedLists } from "../ownedLists/ownedLists.entity";
 
 @Entity("users")
 export class Users {
@@ -7,4 +8,7 @@ export class Users {
 
 	@Column("varchar", { length: 200, nullable: false })
 	password!: string;
+
+	@OneToMany(() => OwnedLists, (list) => list.user)
+	lists?: [OwnedLists];
 }
