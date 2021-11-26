@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { DuplicatedUserException } from "src/global/exceptions/DuplicatedUser.exception";
 import { AuthService } from "../auth/auth.service";
-import { CreateUserDto } from "./dto/createUser.dto";
+import { CreateUserDTO } from "./dto/createUser.dto";
 import { UsersRepository } from "./users.repository";
 
 @Injectable()
@@ -11,7 +11,7 @@ export class UsersService {
 		private readonly authService: AuthService
 	) {}
 
-	async create(body: CreateUserDto) {
+	async create(body: CreateUserDTO) {
 		const existed = await this.usersRepository.findUser(body.user_id);
 		if (existed) {
 			throw new DuplicatedUserException();

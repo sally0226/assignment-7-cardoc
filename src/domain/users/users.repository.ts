@@ -1,7 +1,7 @@
 import { EntityRepository, Repository } from "typeorm";
 import * as bcrypt from "bcrypt";
 import { Users } from "./users.entity";
-import { CreateUserDto } from "./dto/createUser.dto";
+import { CreateUserDTO } from "./dto/createUser.dto";
 
 @EntityRepository(Users)
 export class UsersRepository extends Repository<Users> {
@@ -9,7 +9,7 @@ export class UsersRepository extends Repository<Users> {
 		return await this.findOne({ user_id });
 	}
 
-	async createUser(createUserDto: CreateUserDto) {
+	async createUser(createUserDto: CreateUserDTO) {
 		const newUser = new Users();
 		newUser.user_id = createUserDto.user_id;
 		newUser.password = await bcrypt.hash(createUserDto.password, 10);

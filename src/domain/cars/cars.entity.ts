@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
-import { OwnedLists } from "../ownedLists/ownedLists.entity";
+import { OwnedLists } from "../owned-lists/owned-lists.entity";
 
 @Entity("cars")
 export class Cars {

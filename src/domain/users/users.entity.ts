@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
-import { OwnedLists } from "../ownedLists/ownedLists.entity";
+import { OwnedLists } from "../owned-lists/owned-lists.entity";
 
 @Entity("users")
 export class Users {
@@ -10,5 +10,5 @@ export class Users {
 	password!: string;
 
 	@OneToMany(() => OwnedLists, (list) => list.user)
-	lists?: [OwnedLists];
+	lists?: OwnedLists[];
 }

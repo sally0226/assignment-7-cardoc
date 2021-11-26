@@ -2,14 +2,14 @@ import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { APP_FILTER } from "@nestjs/core";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
 import { AuthModule } from "./domain/auth/auth.module";
 import { Cars } from "./domain/cars/cars.entity";
-import { OwnedLists } from "./domain/ownedLists/ownedLists.entity";
+import { OwnedLists } from "./domain/owned-lists/owned-lists.entity";
 import { Users } from "./domain/users/users.entity";
 import { UsersModule } from "./domain/users/users.module";
 import { HttpExceptionFilter } from "./global/common/http-exception.filter";
+import { OwnedListsModule } from "./domain/owned-lists/owned-lists.module";
+import { CarsModule } from "./domain/cars/cars.module";
 
 @Module({
 	imports: [
@@ -27,11 +27,11 @@ import { HttpExceptionFilter } from "./global/common/http-exception.filter";
 			synchronize: true
 		}),
 		AuthModule,
-		UsersModule
+		UsersModule,
+		OwnedListsModule,
+		CarsModule
 	],
-	controllers: [AppController],
 	providers: [
-		AppService,
 		{
 			provide: APP_FILTER,
 			useClass: HttpExceptionFilter

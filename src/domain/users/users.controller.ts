@@ -1,7 +1,14 @@
-import { Body, Controller, HttpCode, Post, Req, UseGuards } from "@nestjs/common";
+import {
+	Body,
+	Controller,
+	HttpCode,
+	Post,
+	Req,
+	UseGuards
+} from "@nestjs/common";
 import { AuthService } from "../auth/auth.service";
-import { LocalAuthGuard } from "../auth/guards/locah-auth.guard";
-import { CreateUserDto } from "./dto/createUser.dto";
+import { LocalAuthGuard } from "../auth/guards/local-auth.guard";
+import { CreateUserDTO } from "./dto/createUser.dto";
 import { UsersService } from "./users.service";
 
 @Controller("users")
@@ -13,7 +20,7 @@ export class UsersController {
 
 	@Post("signup")
 	@HttpCode(200)
-	async signUp(@Body() body: CreateUserDto) {
+	async signUp(@Body() body: CreateUserDTO) {
 		return await this.userService.create(body);
 	}
 
