@@ -6,6 +6,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { Users } from "../users/users.entity";
 import { UsersRepository } from "../users/users.repository";
 import { AuthService } from "./auth.service";
+import { JwtStrategy } from "./jwt.strategy";
 import { LocalStrategy } from "./local.strategy";
 
 @Module({
@@ -20,7 +21,7 @@ import { LocalStrategy } from "./local.strategy";
 			signOptions: { expiresIn: "1day" }
 		})
 	],
-	providers: [AuthService, LocalStrategy],
+	providers: [AuthService, LocalStrategy, JwtStrategy],
 	exports: [AuthService]
 })
 export class AuthModule {}
