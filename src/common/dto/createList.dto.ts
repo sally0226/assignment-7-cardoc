@@ -3,11 +3,9 @@ import {
 	ArrayMaxSize,
 	ArrayMinSize,
 	IsArray,
-	IsNotEmpty,
-	IsNumber,
-	IsString,
 	ValidateNested
 } from "class-validator";
+import { ListElementDTO } from "./ListElement.dto";
 
 export class CreateListDTO {
 	@IsArray()
@@ -16,14 +14,4 @@ export class CreateListDTO {
 	@ArrayMinSize(1)
 	@ArrayMaxSize(5)
 	list: ListElementDTO[];
-}
-
-export class ListElementDTO {
-	@IsString()
-	@IsNotEmpty()
-	id: string;
-
-	@IsNumber()
-	@IsNotEmpty()
-	trimId: number;
 }
