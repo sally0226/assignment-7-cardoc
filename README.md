@@ -6,11 +6,11 @@
 
 
 
-## Contributor 👩🏻‍💻
+## Contributor 💻
 
 |            [김바다](https://github.com/sally0226)            |
 | :----------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/43634786?v=4" alt="profile_image" style="zoom:50%;" /> |
+| <img src="https://avatars.githubusercontent.com/u/43634786?v=4" alt="profile_image" style="zoom:25%;" /> |
 |                             TIL                              |
 | [resume](https://befitting-tapir-064.notion.site/Resume-8a9cf8a92ef64f79a04be5d98ce9719c) |
 
@@ -22,7 +22,7 @@
 
 
 
-## 프로젝트 실행 방법 (in local)
+## 프로젝트 실행 방법 (in local) 🏃
 
 * node, npm이 이미 설치되어 있다는 가정하에 작성된 가이드입니다.
 
@@ -92,7 +92,7 @@
 
 ![image](https://user-images.githubusercontent.com/43634786/143771397-f7101d47-69ec-4482-80ed-878a1af2ade4.png)
 
-### 
+
 
 ## 사용 기술 🌠
 
@@ -105,7 +105,7 @@
 
 ## 구현 방법 & 이유 🏭
 
-### 1) DB 모델링 
+### 1) DB 모델링 🤔
 
 처음에는 테이블을 두개만 두어 `User`와, `User가 가진 자동차와 그에 따른 타이어 정보`를 한 테이블에 저장하려고 했으나, trimId가 동일한 자동차는 타이어 정보가 같으므로, Cars 테이블로 만들어 동일한 컬럼들의 중복 저장을 줄이고자 했습니다. 
 
@@ -132,7 +132,7 @@
 
   <img src="https://user-images.githubusercontent.com/43634786/143772000-6c72eb6b-1a7d-49ca-919a-615860eaca3a.png" alt="image" style="zoom: 80%;" />
 
-### 2) 인증 
+### 2) 인증 🤝
 
 JWT를 이용한 로그인을 구현했습니다. 
 
@@ -144,7 +144,7 @@ guard를 만들고, 해당 guard가 필요한 곳에서 `@UseGuard()`데코레�
 
 
 
-### 3) 사용자가 소유한 타이어 정보를 저장하는 API
+### 3) 사용자가 소유한 타이어 정보를 저장하는 API 🚓
 
 여러 사용자에 대해 한 번에 요청할 수 있는 API이지만, 과제 안내 페이지에 
 
@@ -213,7 +213,7 @@ guard를 만들고, 해당 guard가 필요한 곳에서 `@UseGuard()`데코레�
 
 
 
-### 4) 자동차 정보 조회 API의 사용
+### 4) 자동차 정보 조회 API의 사용 🏎️
 
 #### [API 호출]
 
@@ -273,7 +273,7 @@ async getCarInfo(trimId: number) {
 
 
 
-### 5) HTTP Status Code 
+### 5) HTTP Status Code ⛳
 
 각 API의 status code는 과제 안내 페이지에 따라 
 
@@ -306,7 +306,7 @@ ex) 회원가입 시 중복 가입의 경우, DTO가 안 맞는 경우 등..
 
 
 
-### 6) Exception 처리
+### 6) Exception 처리 🚫
 
 전역으로 exception을 처리해주기 위해 [Nestjs 공식문서](https://docs.nestjs.com/exception-filters#exception-filters-1)를 참고했습니다. 
 
@@ -342,7 +342,7 @@ DTO관련 error와 같이 **message가 1개 이상으로 배열 형태로 존재
 
 
 
-### 7) Docker를 이용한 배포
+### 7) Docker를 이용한 배포 🐳
 
 ![image](https://user-images.githubusercontent.com/43634786/143778527-322aa184-4456-4b48-9fe7-089509384080.png)
 
@@ -388,7 +388,6 @@ ENV MYSQL_DATABASE ...
 # JWT
 ENV JWT_SECRET_KEY ...
 ```
-
 
 
 docker를 직접 build해서 이용해 본 것은 처음이었습니다. 그래서 많은 시행착오를 겪었지만, 다양한 자료를 찾아보며 성공할 수 있었습니다.
