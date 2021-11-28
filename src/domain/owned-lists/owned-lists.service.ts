@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { CarsService } from "../cars/cars.service";
 import { UsersRepository } from "../users/users.repository";
-import { ListElementDTO } from "../../common/dto/CreateList.dto";
 import { ResponseListDTO } from "../../common/dto/responseList.dto";
 import { OwnedListsRepository } from "./owned-lists.repository";
+import { ListElementDTO } from "src/common/dto/ListElement.dto";
 
 @Injectable()
 export class OwnedListsService {
