@@ -12,13 +12,13 @@ import {
 export class CreateListDTO {
 	@IsArray()
 	@ValidateNested()
-	@Type(() => Element)
+	@Type(() => ListElementDTO)
 	@ArrayMinSize(1)
 	@ArrayMaxSize(5)
-	list: Element[];
+	list: ListElementDTO[];
 }
 
-class Element {
+export class ListElementDTO {
 	@IsString()
 	@IsNotEmpty()
 	id: string;

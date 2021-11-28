@@ -8,7 +8,7 @@ import {
 } from "@nestjs/common";
 import { AuthService } from "../auth/auth.service";
 import { LocalAuthGuard } from "../auth/guards/local-auth.guard";
-import { CreateUserDTO } from "./dto/createUser.dto";
+import { CreateUserDTO } from "../../common/dto/createUser.dto";
 import { UsersService } from "./users.service";
 
 @Controller("users")

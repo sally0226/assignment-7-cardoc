@@ -3,13 +3,12 @@ import { ConfigModule } from "@nestjs/config";
 import { APP_FILTER } from "@nestjs/core";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { AuthModule } from "./domain/auth/auth.module";
-import { Cars } from "./domain/cars/cars.entity";
-import { OwnedLists } from "./domain/owned-lists/owned-lists.entity";
-import { Users } from "./domain/users/users.entity";
+import { Cars } from "./entity/cars.entity";
+import { OwnedLists } from "./entity/owned-lists.entity";
+import { Users } from "./entity/users.entity";
 import { UsersModule } from "./domain/users/users.module";
-import { HttpExceptionFilter } from "./global/common/http-exception.filter";
+import { HttpExceptionFilter } from "./common/filter/http-exception.filter";
 import { OwnedListsModule } from "./domain/owned-lists/owned-lists.module";
-import { CarsModule } from "./domain/cars/cars.module";
 
 @Module({
 	imports: [
@@ -28,8 +27,7 @@ import { CarsModule } from "./domain/cars/cars.module";
 		}),
 		AuthModule,
 		UsersModule,
-		OwnedListsModule,
-		CarsModule
+		OwnedListsModule
 	],
 	providers: [
 		{

@@ -8,7 +8,7 @@ import {
 	UseGuards
 } from "@nestjs/common";
 import { JwtAuthGuard } from "../auth/guards/jwt-auth.guard";
-import { CreateListDTO } from "./dto/CreateList.dto";
+import { CreateListDTO } from "../../common/dto/CreateList.dto";
 import { OwnedListsService } from "./owned-lists.service";
 
 @Controller("owned-lists")
@@ -25,6 +25,6 @@ export class OwnedListsController {
 	@UseGuards(JwtAuthGuard)
 	@Get()
 	async getUsersList(@Req() req) {
-		return await this.ownedListsService.getUsersList(req.user.user_id);
+		return await this.ownedListsService.getUsersList(req.user.id);
 	}
 }
