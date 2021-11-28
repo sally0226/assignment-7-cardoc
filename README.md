@@ -10,10 +10,9 @@
 
 |            [김바다](https://github.com/sally0226)            |
 | :----------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/43634786?v=4" alt="profile_image" style="zoom:25%;" /> |
+| <img src="https://avatars.githubusercontent.com/u/43634786?v=4" alt="profile_image" width="150px" /> |
 |                             TIL                              |
 | [resume](https://befitting-tapir-064.notion.site/Resume-8a9cf8a92ef64f79a04be5d98ce9719c) |
-
 
 
 ## 배포 주소 🌏
