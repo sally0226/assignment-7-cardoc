@@ -1,4 +1,3 @@
-import { BadRequestException } from "@nestjs/common";
 import { EntityRepository, QueryFailedError, Repository } from "typeorm";
 import { Cars } from "../../entity/cars.entity";
 import { Users } from "../../entity/users.entity";
@@ -14,7 +13,7 @@ export class OwnedListsRepository extends Repository<OwnedLists> {
 			return await this.save(list);
 		} catch (err) {
 			if (err instanceof QueryFailedError) {
-				throw new BadRequestException("중복된 정보입니다.");
+				throw new Error();
 			}
 		}
 	}

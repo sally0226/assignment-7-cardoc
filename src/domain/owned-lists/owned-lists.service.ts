@@ -24,9 +24,14 @@ export class OwnedListsService {
 				if (!car) {
 					return "존재하지 않는 trimId입니다.";
 				}
-				flag = true;
-				const newOne = await this.ownedListsRepository.createOne(user, car);
-				return { id: newOne.user.id, trimId: newOne.car.trimId };
+				try {
+					const newOne = await this.ownedListsRepository.createOne(user, car);
+					if (typeof newOne === "string") return newOne;
+					flag = true;
+					return { id: newOne.user.id, trimId: newOne.car.trimId };
+				} catch (err) {
+					return "중복된 정보입니다.";
+				}
 			})
 		);
 		if (!flag) {
