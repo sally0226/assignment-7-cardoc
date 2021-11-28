@@ -1,7 +1,7 @@
 import { HttpService } from "@nestjs/axios";
 import { Injectable } from "@nestjs/common";
 import { lastValueFrom, map } from "rxjs";
-import { Cars } from "./cars.entity";
+import { Cars } from "../../entity/cars.entity";
 import { CarsRepository } from "./cars.repository";
 
 @Injectable()
@@ -11,31 +11,31 @@ export class CarsService {
 		private httpService: HttpService
 	) {}
 
-	async findCar(trim_id: number): Promise<Cars> {
-		const existedInfo = await this.carsRepository.findCar(trim_id);
+	async findCar(trimId: number): Promise<Cars> {
+		const existedInfo = await this.carsRepository.findCar(trimId);
 		if (existedInfo) return existedInfo;
 
-		const newInfo = await this.getCarInfo(trim_id);
+		const newInfo = await this.getCarInfo(trimId);
 		if (newInfo) return newInfo;
 
 		return null;
 	}
 
-	async getCarInfo(trim_id: number) {
-		const url = `https://dev.mycar.cardoc.co.kr/v1/trim/${trim_id}`;
+	async getCarInfo(trimId: number) {
+		const url = `https://dev.mycar.cardoc.co.kr/v1/trim/${trimId}`;
 
 		const responseData = await lastValueFrom(
 			this.httpService
 				.get(url)
 				.pipe(map((response) => response.data?.spec?.driving))
 		);
-
 		const frontTire = responseData.frontTire?.value;
-		if (frontTire) {
-			const values = frontTire.split(/R|\//); // [폭, 편평비, 휠사이즈]
-			return await this.carsRepository.createOne(trim_id, values);
-		}
-
-		return null;
+		const rearTire = responseData.rearTire?.value;
+		console.log(trimId, frontTire, rearTire);
+		if (!frontTire && !rearTire) return null;
+		const frontInfo = frontTire ? frontTire.split(/R|\//) : null; // [폭, 편평비, 휠사이즈]
+		const rearInfo = rearTire ? rearTire.split(/R|\//) : null;
+		const result = await this.carsRepository.createOne(trimId, frontInfo, rearInfo);
+		return result;
 	}
 }

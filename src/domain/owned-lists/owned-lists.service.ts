@@ -1,7 +1,8 @@
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { CarsService } from "../cars/cars.service";
 import { UsersRepository } from "../users/users.repository";
-import { ResponseListDTO } from "./dto/responseList.dto";
+import { ListElementDTO } from "../../common/dto/CreateList.dto";
+import { ResponseListDTO } from "../../common/dto/responseList.dto";
 import { OwnedListsRepository } from "./owned-lists.repository";
 
 @Injectable()
@@ -11,21 +12,21 @@ export class OwnedListsService {
 		private readonly usersRepository: UsersRepository,
 		private readonly carsService: CarsService
 	) {}
-	async createOwnedLists(list) {
+	async createOwnedLists(list: Array<ListElementDTO>) {
 		let flag = false;
 		const result = await Promise.all(
 			list.map(async (elem) => {
 				const user = await this.usersRepository.findUser(elem.id);
 				if (!user) {
-					return "존재하지 않는 사용자입니다.";
+					return "존재하지 않는 user입니다.";
 				}
 				const car = await this.carsService.findCar(elem.trimId);
 				if (!car) {
-					return "존재하지 않는 자동차입니다.";
+					return "존재하지 않는 trimId입니다.";
 				}
 				flag = true;
 				const newOne = await this.ownedListsRepository.createOne(user, car);
-				return { id: newOne.user.user_id, trimId: newOne.car.trim_id };
+				return { id: newOne.user.id, trimId: newOne.car.trimId };
 			})
 		);
 		if (!flag) {
@@ -34,8 +35,8 @@ export class OwnedListsService {
 		return result;
 	}
 
-	async getUsersList(user_id: string) {
-		const result = await this.ownedListsRepository.findUsersList(user_id);
+	async getUsersList(id: string) {
+		const result = await this.ownedListsRepository.findUsersList(id);
 		return result.map((elem) => new ResponseListDTO(elem));
 	}
 }
