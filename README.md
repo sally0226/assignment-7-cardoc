@@ -4,7 +4,7 @@
 
 - 일정: 2021년 11월 22일(월) 오후 4시 ~ 11월 29일(월) 오후 2시
 
-
+</br>
 
 ## Contributor 💻
 
@@ -14,12 +14,13 @@
 |                             TIL                              |
 | [resume](https://befitting-tapir-064.notion.site/Resume-8a9cf8a92ef64f79a04be5d98ce9719c) |
 
+</br>
 
 ## 배포 주소 🌏
 
 주소 : http://101.101.211.247:3000
 
-
+</br>
 
 ## 프로젝트 실행 방법 (in local) 🏃
 
@@ -63,7 +64,7 @@
 
 5. 원하는 API에 접근하여 서비스를 이용합니다. 
 
-
+</br>
 
 ## 과제 요구사항 📝
 
@@ -75,7 +76,7 @@
 
 **✔️ 사용자가 소유한 타이어 정보 조회 API**
 
-
+</br>
 
 📌 RDB중 Mysql 사용
 
@@ -85,13 +86,13 @@
 
 📌 Docker를 이용한 배포
 
-
+</br>
 
 ## ERD 🧬
 
 ![image](https://user-images.githubusercontent.com/43634786/143771397-f7101d47-69ec-4482-80ed-878a1af2ade4.png)
 
-
+</br>
 
 ## 사용 기술 🌠
 
@@ -100,7 +101,7 @@
 - Collaboration : [![img](https://camo.githubusercontent.com/493683d1e69c600dc04bb375ab588466c554471ea28f7326b390b5103c401058/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769742d4630353033323f7374796c653d666c6174266c6f676f3d476974266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/493683d1e69c600dc04bb375ab588466c554471ea28f7326b390b5103c401058/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769742d4630353033323f7374796c653d666c6174266c6f676f3d476974266c6f676f436f6c6f723d7768697465) [![img](https://camo.githubusercontent.com/779ecf5e6059fd906fca2099015186945f91679f22da6bf05f37f52e69e86e8a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3138313731373f7374796c653d666c6174266c6f676f3d476974487562266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/779ecf5e6059fd906fca2099015186945f91679f22da6bf05f37f52e69e86e8a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769744875622d3138313731373f7374796c653d666c6174266c6f676f3d476974487562266c6f676f436f6c6f723d7768697465) [![img](https://camo.githubusercontent.com/1b756736e374960a174cb6f65083804b2052cd6f6e997af84206794e2ca77f71/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f73746d616e2d4646364333373f7374796c653d666c6174266c6f676f3d506f73746d616e266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/1b756736e374960a174cb6f65083804b2052cd6f6e997af84206794e2ca77f71/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f73746d616e2d4646364333373f7374796c653d666c6174266c6f676f3d506f73746d616e266c6f676f436f6c6f723d7768697465)
 - Deploy: [![img](https://camo.githubusercontent.com/b59f4ce8eeb9bdf7a12c2008d3ebf470c640935689650f6f4a864d1c8bda1564/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6176657220436c6f75642d3033433735413f7374796c653d666c6174266c6f676f3d4e61766572266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/b59f4ce8eeb9bdf7a12c2008d3ebf470c640935689650f6f4a864d1c8bda1564/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6176657220436c6f75642d3033433735413f7374796c653d666c6174266c6f676f3d4e61766572266c6f676f436f6c6f723d7768697465) <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white"/>
 
-
+</br>
 
 ## 구현 방법 & 이유 🏭
 
@@ -131,6 +132,8 @@
 
   <img src="https://user-images.githubusercontent.com/43634786/143772000-6c72eb6b-1a7d-49ca-919a-615860eaca3a.png" alt="image" style="zoom: 80%;" />
 
+</br>
+
 ### 2) 인증 🤝
 
 JWT를 이용한 로그인을 구현했습니다. 
@@ -141,21 +144,17 @@ guard를 만들고, 해당 guard가 필요한 곳에서 `@UseGuard()`데코레�
 
 그리고, 회원가입 API에서 회원가입 성공시에 바로 access_token을 발급해주어 회원가입 직후 따로 로그인을 하지 않아도 되도록 했습니다. 
 
-
+</br>
 
 ### 3) 사용자가 소유한 타이어 정보를 저장하는 API 🚓
 
-여러 사용자에 대해 한 번에 요청할 수 있는 API이지만, 과제 안내 페이지에 
+- 여러 사용자에 대해 한 번에 요청할 수 있는 API이지만, 과제 안내 페이지에 `이후의 API는 인증된 사용자만 호출할 수 있다.`라는 문구가 있었기에 이 API는 누가 로그인되어있는지는 신경쓰지 않지만, 로그인이 되어있어야 호출할 수 있도록 구현했습니다.
 
-`이후의 API는 인증된 사용자만 호출할 수 있다.`라는 문구가 있었기에 이 API는 누가 로그인되어있는지는 신경쓰지 않지만, 로그인이 되어있어야 호출할 수 있도록 구현했습니다.
+- 이 API는 Request body로 `사용자 정보` + `trimId` 쌍을 최대 5개 까지 받을 수 있습니다.
 
+  그래서 일부는 성공하고, 일부는 실패한 경우에 어떻게 Response를 보내줄지에 대해 고민했습니다.
 
-
-이 API는 Request body로 `사용자 정보` + `trimId` 쌍을 최대 5개 까지 받을 수 있습니다.
-
-그래서 일부는 성공하고, 일부는 실패한 경우에 어떻게 Response를 보내줄지에 대해 고민했습니다.
-
-1개라도 실패했을 때 Error를 보내는 것은 비효율적이라는 생각이 들었습니다. 따라서 1개라도 성공하면 200으로 Response를 보내되 메세지로 실패한 경우를 나타내주었습니다.
+  1개라도 실패했을 때 Error를 보내는 것은 비효율적이라는 생각이 들었습니다. 따라서 1개라도 성공하면 200으로 Response를 보내되 메세지로 실패한 경우를 나타내주었습니다.
 
 #### [예시]
 
@@ -222,7 +221,13 @@ guard를 만들고, 해당 guard가 필요한 곳에서 `@UseGuard()`데코레�
 
 이를 해결하기 위해 rjax의 [lastValueFrom](https://rxjs.dev/api/index/function/lastValueFrom) 함수를 사용했습니다. 이 함수는 Observable를 Promise로 바꿔주며 함수 이름이 뜻하는 바와 같게 마지막 value를 return해줍니다. 
 
+</br>
 
+또한 중복된 trimId의 API를 여러번 호출하지 않도록, `Cars`테이블에 해당 trimId가 저장되어있을 때에는, API를 새로 호출하지 않고 `ownedLists`를 바로 insert해주었습니다. 
+
+![image](https://user-images.githubusercontent.com/43634786/143802880-7e6044c2-b2d9-4415-b2d3-4042281d0911.png)
+
+</br>
 
 #### [정규식 이용]
 
@@ -230,7 +235,7 @@ guard를 만들고, 해당 guard가 필요한 곳에서 `@UseGuard()`데코레�
 
 주어진 string을 `/`와 `R`로 split해주어야 했는데, 정규식을 작성하여 한 번의 split함수로 [폭, 편평비, 휠 사이즈]를 구할 수 있도록 했습니다.
 
-
+</br>
 
 #### [nullable]
 
@@ -270,7 +275,7 @@ async getCarInfo(trimId: number) {
 }
 ```
 
-
+</br>
 
 ### 5) HTTP Status Code ⛳
 
@@ -303,7 +308,7 @@ ex) 회원가입 시 중복 가입의 경우, DTO가 안 맞는 경우 등..
 }
 ```
 
-
+</br>
 
 ### 6) Exception 처리 🚫
 
@@ -339,7 +344,7 @@ DTO관련 error와 같이 **message가 1개 이상으로 배열 형태로 존재
 
 자세한 메세지들은 `exception.getResponse()["message"]`에 존재했기 때문입니다. 
 
-
+</br>
 
 ### 7) Docker를 이용한 배포 🐳
 
@@ -348,6 +353,8 @@ DTO관련 error와 같이 **message가 1개 이상으로 배열 형태로 존재
 #### [MySQL]
 
 docker hub에서 latest버전의 image를 다운받아 컨테이너를 생성 및 실행했습니다. 
+
+</br>
 
 #### [Nestjs 서버]
 
@@ -403,7 +410,7 @@ docker를 직접 build해서 이용해 본 것은 처음이었습니다. 그래�
 
    따라서, `pm2-rumtime` 명령어를 실행할 때 `--output`명령어로 log경로를 지정했습니다. 이렇게 하니 해당 경로에 log파일이 생겨서 지난 log들을 정상적으로 확인할 수 있었습니다. 
 
-   
+</br>
 
 ## 폴더 구조 📂
 
@@ -461,13 +468,15 @@ docker를 직접 build해서 이용해 본 것은 처음이었습니다. 그래�
 🐳 Dockerfile
 ```
 
-
+</br>
 
 ## API Test (with Postman) 🐾
 
 #### [주소]
 
 [Postman 링크](https://documenter.getpostman.com/view/15410333/UVJcjvyn)
+
+</br>
 
 #### [방법]
 
